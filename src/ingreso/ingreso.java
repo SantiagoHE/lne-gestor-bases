@@ -5,6 +5,10 @@
  */
 package ingreso;
 
+import java.awt.Image;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author Soporte
@@ -15,7 +19,18 @@ public class ingreso extends javax.swing.JFrame {
      * Creates new form ingreso
      */
     public ingreso() {
+        //ajuste de tamaño e imagen
         initComponents();
+        setLocationRelativeTo(null);// pantalla central
+        setResizable(false);//desactivar maximisar
+        setTitle("Mundo Biz S.A.S");//titulo de pantalla
+        
+        //imagen de fondo ajustada
+        initComponents();
+        ImageIcon imagen = new ImageIcon("src/imagenes/PRUEBA-01.jpg");//imagen de fondo
+        Icon icono = new ImageIcon(imagen.getImage().getScaledInstance(iniFondo.getWidth(),iniFondo.getHeight(), Image.SCALE_DEFAULT));
+        iniFondo.setIcon(icono);
+        this.repaint();
     }
 
     /**
@@ -27,17 +42,21 @@ public class ingreso extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        iniFondo = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        iniFondo.setText("jLabel2");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(iniFondo, javax.swing.GroupLayout.DEFAULT_SIZE, 657, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(iniFondo, javax.swing.GroupLayout.DEFAULT_SIZE, 542, Short.MAX_VALUE)
         );
 
         pack();
@@ -79,5 +98,6 @@ public class ingreso extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel iniFondo;
     // End of variables declaration//GEN-END:variables
 }
